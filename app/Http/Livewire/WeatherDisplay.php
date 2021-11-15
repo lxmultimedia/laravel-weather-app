@@ -34,9 +34,9 @@ class WeatherDisplay extends Component
 
     public function translate($description) {
 
-        //$response = Http::get("https://translate.googleapis.com/translate_a/single?client=gtx&sl=de&tl=fr&dt=t&q=".$description);
-        //return $response->json()[0][0][0] ?? $description;
-        return $description;
+        $response = Http::get("https://translate.googleapis.com/translate_a/single?client=gtx&sl=de&tl=de&dt=t&q=".$description);
+        return $response->json()[0][0][0] ?? $description;
+        //return $description;
     }
 
     public function refetch()
