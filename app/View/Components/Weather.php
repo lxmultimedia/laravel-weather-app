@@ -30,10 +30,4 @@ class Weather extends Component
     {
         return view('components.weather');
     }
-
-    public function translate($description) {
-
-        $response = Http::get("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=de&dt=t&q=".$description);
-        return $response->json()[0][0][0];
-    }
 }

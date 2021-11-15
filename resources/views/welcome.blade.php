@@ -9,14 +9,17 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Livewire -->
+    @livewireStyles
+
     <!-- Styles -->
     <link rel="stylesheet" href="/css/app.css">
 
-</head>
 <body class="antialiased bg-gradient-to-tr from-blue-200 to-blue-900 min-h-screen">
 <div class="mt-8">
-     <x-weather :currentWeather="$currentWeather" :futureWeather="$futureWeather" />
+    @livewire('weather-display')
 </div>
 
+    @livewireScripts
 </body>
 </html>
