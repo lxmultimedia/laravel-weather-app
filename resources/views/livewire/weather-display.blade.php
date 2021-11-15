@@ -1,10 +1,10 @@
 <div>
-    <div class="w-128 mx-auto text-sm rounded-lg my-5">
+    <div class="w-128 max-w-full mx-auto text-sm rounded-lg m-5">
         <input wire:model.lazy="location" wire:keydown.enter="refetch" type="text" class="w-full rounded-md p-2"
                id="location" placeholder="Bitte Stadt eingeben...">
     </div>
 
-    <div class="w-128 mx-auto bg-gray-900 text-white text-sm rounded-lg overflow-hidden">
+    <div class="w-128 max-w-full bg-gray-900 text-white text-sm rounded-lg overflow-hidden">
         <div class="current-weather flex items-center justify-between px-4 px-6">
             <div class="flex items-center">
                 <div>

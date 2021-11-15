@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/app.css">
 
 <body class="antialiased bg-gradient-to-tr from-blue-200 to-blue-900 min-h-screen">
-<div class="mt-8">
+<div class="mt-8 p-5">
     @livewire('weather-display')
 </div>
 
