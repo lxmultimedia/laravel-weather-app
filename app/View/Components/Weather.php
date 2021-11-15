@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 
-class weather extends Component
+class Weather extends Component
 {
     public $currentWeather;
     public $futureWeather;
