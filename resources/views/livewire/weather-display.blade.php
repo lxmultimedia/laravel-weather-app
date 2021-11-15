@@ -4,6 +4,10 @@
                id="location" placeholder="Bitte Stadt eingeben...">
     </div>
 
+    @if (session('message'))
+        <p class="text-center text-white mb-4">{{ session('message') }}</pclass>
+    @endif
+
     <div class="w-128 max-w-full mx-auto bg-gray-900 text-white text-sm rounded-lg overflow-hidden">
         <div class="current-weather flex items-center justify-between px-4 px-6">
             <div class="flex items-center">

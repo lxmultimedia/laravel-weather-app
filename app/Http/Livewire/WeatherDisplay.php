@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
 class WeatherDisplay extends Component
@@ -28,6 +29,11 @@ class WeatherDisplay extends Component
 
         $this->currentWeather = $response->json();
         $this->futureWeather = $responseFuture->json();
+
+        if($this->currentWeather['cod']=='404') {
+            Session::flash('message', "Die gewählte Stadt ist ungültig");
+            redirect('/');
+        }
     }
 
     public function render()

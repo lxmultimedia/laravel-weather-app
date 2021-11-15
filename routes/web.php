@@ -14,8 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $location = request()->location ??  'Zurich';
-
-    //dump($response->json());
     return view('welcome');
-});
+})->name("home");
