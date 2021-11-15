@@ -9,19 +9,22 @@ class WeatherDisplay extends Component
 {
     public $currentWeather;
     public $futureWeather;
-    public $location;
+    public $location = null;
+    private $defaultLocation = 'Winterthur';
 
     public function mount()
     {
-        $this->location = 'Lugano';
         $this->fetchWeather();
     }
 
     public function fetchWeather() {
+
+        $location = $this->location ?? $this->defaultLocation;
+
         $apikey = config('services.openweather.key');
 
-        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q={$this->location}&appid={$apikey}&units=metric");
-        $responseFuture = Http::get("https://api.openweathermap.org/data/2.5/forecast?q={$this->location}&cnt=5&&appid={$apikey}&units=metric");
+        $response = Http::get("https://api.openweathermap.org/data/2.5/weather?q={$location}&appid={$apikey}&units=metric");
+        $responseFuture = Http::get("https://api.openweathermap.org/data/2.5/forecast?q={$location}&cnt=5&&appid={$apikey}&units=metric");
 
         $this->currentWeather = $response->json();
         $this->futureWeather = $responseFuture->json();
@@ -36,7 +39,6 @@ class WeatherDisplay extends Component
 
         $response = Http::get("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=de&dt=t&q=".$description);
         return $response->json()[0][0][0] ?? $description;
-        //return $description;
     }
 
     public function refetch()
