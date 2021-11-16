@@ -11,7 +11,7 @@ module.exports = {
             '128': '32rem'
         },
         gridTemplateColumns: {
-            'weather': '2fr 8fr 2fr'
+            'weather': '4fr 6fr 2fr'
         }
     },
   },

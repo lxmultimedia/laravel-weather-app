@@ -35,8 +35,8 @@
         <ul class="future-weather bg-gray-800 px-4 py-4 space-y-8">
             @foreach ($futureWeather['list'] as $item)
                 <li class="grid grid-cols-weather items-center">
-                    <div class="text-gray-400">
-                        {{ strtoupper(\Carbon\Carbon::createFromTimestamp($item['dt'])->format('D H:i'))   }}
+                    <div class="text-gray-400 text-xs">
+                        {{ $this->translate(strtoupper(\Carbon\Carbon::createFromTimestamp($item['dt'])->format('l H:i')))   }}
                     </div>
                     <div class="flex items-center">
                         <div><img src="https://openweathermap.org/img/wn/{{ $item['weather'][0]['icon'] }}.png"></div>
